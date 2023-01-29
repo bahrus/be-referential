@@ -1,11 +1,13 @@
 # be-referential
 
-attribute-based equivalent of ref-to
+Climb up the ShadowDOM hierarchy searching for element with matching id, and create a weak reference to it.
 
 ```html
-<template be-referential>
-    <my-single-element some-attribute></my-single-element>
-</template>
+<template id=my-id be-referential></template>
 ```
 
-Add property _ref to template, that references the element (wherever it is)
+Accessible via oTemplate.beDecorated.referential.ref
+
+Emits event 'be-decorated.referential.resolved' when found.
+
+Emits event 'be-decorated.referential.rejected' when not found.
